@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+<h1> Tasks </h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <!-- <li> <%= task.title %> </li> -->
+    <li style="list-style-type: none"><label><input type="checkbox"><span> <%= link_to task.title, task_path(task) %></span></label> <%= link_to "Destroy", destroy_path(task), method: :delete, data: {confirm: "Are you sure?" } %> </i></li>
+  <% end %>
+</ul>
+
+ <p> <%= link_to 'Add a new task', tasks_new_path %> </p>
+
+<i class="fas fa-dumpster">
